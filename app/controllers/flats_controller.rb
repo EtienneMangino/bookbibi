@@ -23,6 +23,12 @@ class FlatsController < ApplicationController
   def create
     @flat = current_user.flats.new(flat_params)
     @flat.save
+    (0..90).each do |i|
+      date = Date.today+i
+      @availability = @flat.availabilities.new(day:date)
+      @availability.save
+    end
+
     respond_with(@flat)
   end
 
