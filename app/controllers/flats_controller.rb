@@ -23,9 +23,9 @@ class FlatsController < ApplicationController
   def create
     @flat = current_user.flats.new(flat_params)
     @flat.save
-    for i in 0..90
+    (0..90).each do |i|
       date = Date.today+i
-      @availability = Availability.new(day:date, flat_id:@flat.id)
+      @availability = @flat.availabilities.new(day:date)
       @availability.save
     end
 
