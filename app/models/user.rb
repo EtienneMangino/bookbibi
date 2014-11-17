@@ -5,4 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :flats
+  has_many :bookings
+  validates :email, presence: true
+
 end
