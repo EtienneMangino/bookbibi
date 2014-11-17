@@ -49,3 +49,6 @@ gem 'google-webfonts-rails', '~> 0.0.4'
 gem "font-awesome-rails"
 
 gem "figaro"
+
+gem 'aws-sdk'
+gem 'paperclip'
