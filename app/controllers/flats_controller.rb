@@ -21,7 +21,7 @@ class FlatsController < ApplicationController
   end
 
   def create
-    @flat = Flat.new(flat_params)
+    @flat = current_user.flats.new(flat_params)
     @flat.save
     respond_with(@flat)
   end
@@ -42,6 +42,6 @@ class FlatsController < ApplicationController
     end
 
     def flat_params
-      params.require(:flat).permit(:title, :address, :description, :user_id)
+      params.require(:flat).permit(:title, :address, :description)
     end
 end
