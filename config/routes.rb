@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'availabilities/update'
+
+  get 'bookings/create'
+
   resources :flats
 
   devise_for :users
