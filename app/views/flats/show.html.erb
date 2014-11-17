@@ -21,8 +21,9 @@
 </p>
 
 <p>
-  <strong>User:</strong>
-  <%= @flat.user %>
+  <strong>Owner:</strong>
+  <%= @flat.user.first_name %>
+  <%= @flat.user.last_name %>
 </p>
 
 <%= link_to 'Edit', edit_flat_path(@flat) %> |

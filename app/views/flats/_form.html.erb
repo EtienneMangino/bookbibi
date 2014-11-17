@@ -25,13 +25,8 @@
   </div>
 
   <div class="flat_pic">
-    <%= form_for(@flat, html: { multipart: true }) do |f| %>
-      <p>
         <%= f.label :picture %>
         <%= f.file_field :picture %>
-      </p>
-      <p><%= f.submit %></p>
-    <% end %>
   </div>
 
   <div class="actions">
