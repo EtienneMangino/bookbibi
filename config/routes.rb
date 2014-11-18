@@ -2,14 +2,13 @@ Rails.application.routes.draw do
 
   get 'availabilities/update'
 
-  get 'bookings/create'
-
   resources :flats do
+    resources :bookings, only: [:create]
     collection do
       get :manage_all
     end
   end
-  devise_for :users
+  devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks" }
 
   root to: 'flats#index'
   # The priority is based upon order of creation: first created -> highest priority.

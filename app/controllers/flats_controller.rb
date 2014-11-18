@@ -9,6 +9,7 @@ class FlatsController < ApplicationController
   end
 
   def show
+    @booking = Booking.new
     respond_with(@flat)
   end
 
