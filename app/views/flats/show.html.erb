@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <p>
   <strong>Title:</strong>
   <%= @flat.title %>
@@ -19,6 +17,8 @@
   <strong>User:</strong>
   <%= @flat.user %>
 </p>
+
+<%= render 'bookings/form'%>
 
 <%= link_to 'Edit', edit_flat_path(@flat) %> |
 <%= link_to 'Back', flats_path %>
