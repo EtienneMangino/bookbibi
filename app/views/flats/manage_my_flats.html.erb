@@ -1,8 +1,26 @@
-<% @flats.each do |flat| %>
-  <%= flat.title %>
-  <%= flat.address %>
-  <%= flat.description %>
-  <%= link_to 'Show', flat %></td>
-  <%= link_to 'Edit', edit_flat_path(flat) %></td>
-  <%= link_to 'Destroy', flat, method: :delete, data: { confirm: 'Are you sure?' } %>
-<% end %>
+<div class="container text-center">
+  <div class="row">
+    <% @flats.each do |flat| %>
+      <div class="col-xs-12 col-sm-6">
+        <h2><%= flat.title %></h2>
+        <h3>
+          <%= link_to(edit_flat_path(flat)) do %>
+            <i class="fa fa-pencil"></i>
+          <% end %>
+          <%= link_to(manage_my_flats_path, method: :delete, data: { confirm: 'Are you sure?' }) do %>
+            | <i class="fa fa-trash"></i>
+          <% end %>
+        </h3>
+        <div class="manage_flat_image">
+          <%= image_tag flat.picture.url(:medium) %>
+        </div>
+        <div class="flat_description text-left">
+          <p>Address: <%= flat.address %></p>
+          <p>City: <%= flat.city %></p>
+          <p>Description: <%= flat.description %></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
