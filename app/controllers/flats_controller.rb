@@ -29,20 +29,20 @@ class FlatsController < ApplicationController
       @availability.save
     end
 
-    redirect_to manage_my_flats_path
+    redirect_to manage_all_flats_path
   end
 
   def update
     @flat.update(flat_params)
-    redirect_to manage_my_flats_path
+    redirect_to manage_all_flats_path
   end
 
   def destroy
     @flat.destroy
-    redirect_to manage_my_flats_path
+    redirect_to manage_all_flats_path
   end
 
-  def manage_my_flats
+  def manage_all
     @flats = current_user.flats.all
     respond_with(@flats)
   end
