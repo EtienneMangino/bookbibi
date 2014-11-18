@@ -1,0 +1,11 @@
+<div class=text-center>
+<%= form_tag(flats_path, method: "get") do %>
+  <%= label_tag(:city, "City:") %>
+  <%= text_field_tag(:city) %>
+  <%= label_tag(:start_date, "start_date:") %>
+  <%= date_field_tag(:start_date) %>
+  <%= label_tag(:end_date, "end_date:") %>
+  <%= date_field_tag(:end_date) %>
+  <%= submit_tag("Find a flat") %>
+<% end %>
+</div>

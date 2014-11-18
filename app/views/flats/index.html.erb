@@ -1,29 +1,26 @@
-<h1>Listing flats</h1>
+<h1 class="text-center">Find your Flat ! </h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Address</th>
-      <th>Description</th>
-      <th>User</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<div class="container text-center">
+  <div class="row">
 
-  <tbody>
-    <% @flats.each do |flat| %>
-      <tr>
-        <td><%= flat.title %></td>
-        <td><%= flat.address %></td>
-        <td><%= flat.description %></td>
-        <td><%= link_to 'Show', flat %></td>
-        <td><%= link_to 'Edit', edit_flat_path(flat) %></td>
-        <td><%= link_to 'Destroy', flat, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+        <% @flats.each do |flat| %>
+
+              <div class="col-xs-12 col-sm-6 col-md-3">
+                  <h3><%= link_to flat.title, flat %></h3>
+                  <p><%= flat.city %></p>
+                  <div >
+                    <% if flat.picture.exists? %>
+                      <%= link_to image_tag(flat.picture.url(:medium)), flat %>
+                    <% end %>
+                  </div>
+              </div>
+
+          <% end %>
+
+  </div>
+</div>
+
+
 
 <br>
 
