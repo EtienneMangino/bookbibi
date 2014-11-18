@@ -32,6 +32,8 @@ ActiveRecord::Schema.define(version: 20141118103652) do
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.date     "start_date"
+    t.date     "end_date"
   end
 
   add_index "bookings", ["flat_id"], name: "index_bookings_on_flat_id", using: :btree
