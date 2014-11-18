@@ -1,4 +1,4 @@
-<%= form_for(@flat) do |f| %>
+<%= bootstrap_form_for(@flat, class: 'form') do |f| %>
   <% if @flat.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@flat.errors.count, "error") %> prohibited this flat from being saved:</h2>
@@ -10,35 +10,29 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-offset-1 col-xs-10 col-sm-offset-3 col-sm-6 col-lg-offset-4 col-lg-4">
+        <div class="field">
+          <%= f.text_field :title %>
+        </div>
+        <div class="field">
+          <%= f.text_field :address %>
+        </div>
+        <div class="field">
+          <%= f.text_field :city %>
+        </div>
+        <div class="field">
+          <%= f.text_area :description %>
+        </div>
+        <div class="field">
+          <%= f.file_field :picture %>
+        </div>
+        <div class="actions">
+          <%= f.submit %>
+        </div>
+      </div>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :address %><br>
-    <%= f.text_field :address %>
-  </div>
-
-  <div class="field">
-    <%= f.label :city %><br>
-    <%= f.text_field :city %>
-  </div>
-
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_area :description %>
-  </div>
-
-  <div class="flat_pic">
-    <%= f.label :picture %>
-    <%= f.file_field :picture %>
-  </div>
-
-  </br>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
 <% end %>
