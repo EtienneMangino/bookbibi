@@ -45,6 +45,7 @@ gem 'binding_of_caller', group: :development
 gem 'better_errors', group: :development
 
 gem 'bootstrap-sass', '~> 3.3.0'
+gem 'bootstrap_form'
 
 gem 'google-webfonts-rails', '~> 0.0.4'
 
