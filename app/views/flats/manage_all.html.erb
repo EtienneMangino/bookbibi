@@ -1,0 +1,31 @@
+<div class="container text-center">
+  <div class="row">
+    <% @flats.each do |flat| %>
+      <div class="col-xs-12 col-sm-6">
+        <h2><%= flat.title %></h2>
+        <h3>
+          <%= link_to(edit_flat_path(flat)) do %>
+            <i class="fa fa-pencil"></i>
+          <% end %>
+          <%= link_to(flat_path(flat), method: :delete, data: { confirm: 'Are you sure?' }) do %>
+            | <i class="fa fa-trash"></i>
+          <% end %>
+        </h3>
+        <div class="manage_flat_image">
+          <%= image_tag flat.picture.url(:medium) %>
+        </div>
+        <div class="flat_description text-left">
+          <p>Address: <%= flat.address %></p>
+          <p>City: <%= flat.city %></p>
+          <p>Description: <%= flat.description %></p>
+        </div>
+      </div>
+    <% end %>
+    <div class="row">
+      <div class="col-xs-12">
+        <button type="button" class="btn btn-default"><%= link_to 'Add a new flat', (new_flat_path) %></button>
+      </div>
+    </div>
+  </div>
+</div>
+

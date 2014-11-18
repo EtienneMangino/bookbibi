@@ -1,7 +1,11 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome";
+@import "flats.css.scss";
 
+body {
+  padding-top: 55px;
+}
 
 #welcome {
   color: #777777;

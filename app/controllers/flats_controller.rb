@@ -30,18 +30,24 @@ class FlatsController < ApplicationController
       @availability.save
     end
 
-    respond_with(@flat)
+    redirect_to manage_all_flats_path
   end
 
   def update
     @flat.update(flat_params)
-    respond_with(@flat)
+    redirect_to manage_all_flats_path
   end
 
   def destroy
     @flat.destroy
-    respond_with(@flat)
+    redirect_to manage_all_flats_path
   end
+
+  def manage_all
+    @flats = current_user.flats.all
+    respond_with(@flats)
+  end
+
 
   private
     def set_flat
@@ -49,6 +55,6 @@ class FlatsController < ApplicationController
     end
 
     def flat_params
-      params.require(:flat).permit(:title, :address, :description, :picture)
+      params.require(:flat).permit(:title, :address, :city, :description, :picture)
     end
 end
