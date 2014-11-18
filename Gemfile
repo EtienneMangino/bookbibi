@@ -39,6 +39,8 @@ gem 'spring',        group: :development
 # gem 'debugger', group: [:development, :test]
 
 gem 'devise'
+gem 'omniauth-facebook'
+
 gem 'binding_of_caller', group: :development
 gem 'better_errors', group: :development
 
