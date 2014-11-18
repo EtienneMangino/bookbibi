@@ -3,6 +3,11 @@
   <%= @flat.title %>
 </p>
 
+
+<p>
+  <%= image_tag @flat.picture.url(:large) %>
+</p>
+
 <p>
   <strong>Address:</strong>
   <%= @flat.address %>
@@ -14,8 +19,9 @@
 </p>
 
 <p>
-  <strong>User:</strong>
-  <%= @flat.user %>
+  <strong>Owner:</strong>
+  <%= @flat.user.first_name %>
+  <%= @flat.user.last_name %>
 </p>
 
 <%= render 'bookings/form'%>
