@@ -1,30 +1,30 @@
-<p>
-  <strong>Title:</strong>
-  <%= @flat.title %>
-</p>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-offset-1 col-xs-10 col-sm-offset-3 col-sm-6 col-lg-offset-4 col-lg-4">
 
+      <h2 class="text-center"><%= @flat.title %></h2>
 
-<p>
-  <%= image_tag @flat.picture.url(:large) %>
-</p>
+      <%= image_tag @flat.picture.url(:large) %>
 
-<p>
-  <strong>Address:</strong>
-  <%= @flat.address %>
-</p>
+      <p>
+        <strong>Address:</strong>
+        <%= @flat.address %>
+      </p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @flat.description %>
-</p>
+      <p>
+        <strong>Description:</strong>
+        <%= @flat.description %>
+      </p>
 
-<p>
-  <strong>Owner:</strong>
-  <%= @flat.user.first_name %>
-  <%= @flat.user.last_name %>
-</p>
+      <p>
+        <strong>Owner:</strong>
+        <%= @flat.user.first_name %>
+        <%= @flat.user.last_name %>
+      </p>
 
-<%= render 'bookings/form'%>
+      <%= render 'bookings/form'%>
 
-<%= link_to 'Edit', edit_flat_path(@flat) %> |
-<%= link_to 'Back', flats_path %>
+    </div>
+  </div>
+</div>
+

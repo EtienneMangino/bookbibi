@@ -2,7 +2,7 @@
   <div class="row">
     <% @flats.each do |flat| %>
       <div class="col-xs-12 col-sm-6">
-        <h2><%= flat.title %></h2>
+        <h3><%= flat.title %></h3>
         <h3>
           <%= link_to(edit_flat_path(flat)) do %>
             <i class="fa fa-pencil"></i>

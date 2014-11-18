@@ -1,28 +1,26 @@
+<%= bootstrap_form_for([@flat, @booking], class: 'form') do |f| %>
+  <% if @booking.errors.any? %>
+    <div id="error_explanation ">
+      <h2><%= pluralize(@booking.errors.count, "error") %> prohibited this booking from being saved:</h2>
 
-  <%= form_for([@flat, @booking]) do |f| %>
-    <% if @booking.errors.any? %>
-      <div id="error_explanation ">
-        <h2><%= pluralize(@booking.errors.count, "error") %> prohibited this booking from being saved:</h2>
-
-        <ul>
-        <% @booking.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-        </ul>
-      </div>
-    <% end %>
-
-    <div class="field">
-      <%= f.label :start_date %>
-      <%= f.date_field :start_date %>
-    </div>
-     <div class="field">
-      <%= f.label :end_date %>
-      <%= f.date_field :end_date %>
-    </div>
-    <div class="actions">
-      <%= f.submit  %>
+      <ul>
+      <% @booking.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
     </div>
   <% end %>
+
+        <div class="field">
+          <%= f.date_field :start_date %>
+        </div>
+         <div class="field">
+          <%= f.date_field :end_date %>
+        </div>
+        <div class="actions">
+          <%= f.submit  %>
+        </div>
+
+<% end %>
 
 
