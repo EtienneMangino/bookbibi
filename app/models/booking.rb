@@ -17,6 +17,9 @@ class Booking < ActiveRecord::Base
     if start_date > end_date
       return errors.add(:start_date, " can't be superior to end date")
     end
+    if start_date < Date.today
+      return errors.add(:start_date, " can't be inferior to Today")
+    end
     flat = Flat.find(flat_id)
     for date in start_date..end_date
       if (flat.availabilities.find_by day: date).nil?

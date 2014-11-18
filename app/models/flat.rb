@@ -12,4 +12,15 @@ class Flat < ActiveRecord::Base
   validates_attachment_content_type :picture,
     content_type: /\Aimage\/.*\z/
 
+
+  after_save :set_availabilities
+
+  private
+  def set_availabilities
+    (0..90).each do |i|
+        date = Date.today+i
+        availability = self.availabilities.new(day:date)
+        availability.save
+    end
+  end
 end
