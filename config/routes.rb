@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   get 'bookings/create'
 
+  get '/manage_my_flats', to: 'flats#manage_my_flats', as: 'manage_my_flats'
+
   resources :flats
   devise_for :users
 

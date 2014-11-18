@@ -42,6 +42,12 @@ class FlatsController < ApplicationController
     respond_with(@flat)
   end
 
+  def manage_my_flats
+    @flats = current_user.flats.all
+    respond_with(@flats)
+  end
+
+
   private
     def set_flat
       @flat = Flat.find(params[:id])
