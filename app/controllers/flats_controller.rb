@@ -4,18 +4,38 @@ class FlatsController < ApplicationController
   respond_to :html
 
   def index
-    @flats = Flat.all
-    respond_with(@flats)
+    @city = params[:city]
+    @start_date = params[:start_date]
+    @end_date = params[:end_date]
+
+    if @city != ""
+      flats_city = Flat.where(city: @city)
+    else
+      flats_city = Flat.all
+    end
+
+    @flats = flats_city.select do |flat|
+      available = true
+      (@start_date..@end_date).each do |date|
+        if flat.availabilities.find_by(day: date) != nil
+          available = false if flat.availabilities.find_by(day: date).booking.present?
+        else
+          available = false
+        end
+      end
+      flat if available
+    end
+
   end
 
   def show
     @booking = Booking.new
-    respond_with(@flat)
+
   end
 
   def new
     @flat = Flat.new
-    respond_with(@flat)
+
   end
 
   def edit
@@ -40,7 +60,7 @@ class FlatsController < ApplicationController
 
   def manage_all
     @flats = current_user.flats.all
-    respond_with(@flats)
+
   end
 
 
@@ -53,3 +73,4 @@ class FlatsController < ApplicationController
       params.require(:flat).permit(:title, :address, :city, :description, :picture)
     end
 end
+
