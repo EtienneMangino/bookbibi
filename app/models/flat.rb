@@ -3,7 +3,7 @@ class Flat < ActiveRecord::Base
   has_many :bookings, dependent: :destroy
   has_many :availabilities, dependent: :destroy
 
-  validates :address, :title, :description, :user_id, presence: true
+  validates :address, :city, :title, :description, :user_id, presence: true
 
 
   has_attached_file :picture,
