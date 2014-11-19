@@ -1,7 +1,9 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome";
-@import "flats.css.scss";
+
+@import "flats";
+@import "calendar";
 
 body {
   // padding-top: 55px;
@@ -80,3 +82,7 @@ h2 {
 //  {
 //   color: white;
 // }
+
+.spacer {
+  margin-top: 15px;
+}
