@@ -1,13 +1,19 @@
 class BookingsController < ApplicationController
+  before_action :set_booking, only: [:show]
+
   def create
     @flat = Flat.find(params[:flat_id])
     @booking = current_user.bookings.new(booking_params.merge(flat_id: @flat.id))
 
     if @booking.save
-      redirect_to @flat, notice: 'Booking was successfully created.'
+      redirect_to booking_path(@booking), notice: 'Booking was successfully created.'
     else
       render 'flats/show'
     end
+  end
+
+  def show
+    @flat = @booking.flat
   end
 
   private
@@ -21,5 +27,4 @@ class BookingsController < ApplicationController
       params.require(:booking).permit(:start_date, :end_date)
     end
 end
-
 
