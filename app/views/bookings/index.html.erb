@@ -1,0 +1,47 @@
+<h1 class="text-center">Your bookings</h1>
+<div class="container text-center">
+  <div class="row">
+    <% @bookings.each do |booking| %>
+      <h3><%= booking.flat.title %></h3>
+      <div class="spacer"></div>
+
+      <div class="col-xs-12 col-sm-6">
+        <%= image_tag booking.flat.picture.url(:medium) %>
+      </div>
+
+      <div class="col-xs-12 col-sm-6 text-center">
+        <div class="text-left">
+          <div class="spacer"></div>
+          <p>
+            <strong>Address:</strong>
+            <%= booking.flat.address %>
+          </p>
+
+          <p>
+            <strong>City:</strong>
+            <%= booking.flat.city %>
+          </p>
+
+          <p>
+            <strong>Description:</strong>
+            <%= booking.flat.description %>
+          </p>
+
+          <p>
+            <strong>Owner:</strong>
+            <%= booking.flat.user.first_name %>
+            <%= booking.flat.user.last_name %>
+          </p>
+
+          You booked <strong>from <%= booking.start_date %> to <%= booking.end_date %> </strong><br>
+        </div>
+
+        <div class="spacer"></div>
+
+        <%= link_to 'Cancel my booking', booking_path(booking), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default" %>
+
+      </div>
+    <% end %>
+  </div>
+</div>
+
