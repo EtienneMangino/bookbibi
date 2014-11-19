@@ -1,10 +1,12 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome";
-@import "flats.css.scss";
+
+@import "flats";
+@import "calendar";
 
 body {
-  padding-top: 55px;
+  // padding-top: 55px;
 }
 
 #welcome {
@@ -13,31 +15,74 @@ body {
   padding-bottom: 15px;
 }
 
+.banner{
+  background-image: url('sunnyold.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  color: white;
+  padding-top: 100px;
+  padding-bottom: 30px;
+  height: 850px;
+}
+
+#title {
+  font-size: 100px;
+  font-family: 'Coustard', serif;
+  font-weight: 900;
+  color: #e67e22;
+  text-shadow: 1px 1px 0.8px #292929;
+}
+
+#baseline {
+  font-family: 'Coustard', serif;
+  color: white;
+  font-size: 30px;
+  text-shadow: 1px 1px 0.8px #292929;
+}
+
+#bibinav {
+  background: transparent;
+  border-bottom: none;
+}
+
+#bibinav a {
+  color: white;
+}
+
+#bibinav a:hover {
+  color: #e67e22;
+}
+
+
+h2 {
+  color: white;
+  font-size: 20px;
+}
+
+#fb-btn {
+  padding-top: 60px;
+}
+
+
+#signup {
+  margin-top: 40px;
+  font-size: 16px;
+}
+
+#signup a {
+  color: white;
+}
+
+.btn-default {
+  color: white;
+  background-color: #e67e22;
+  border-color: #cccccc;
+}
+
+//  {
+//   color: white;
+// }
+
 .spacer {
   margin-top: 15px;
 }
-
-.calendar-available {
-  background-color: #2ecc71;
-  width: 50px;
-  height: 50px;
-  border: 1px solid white;
-  padding: 17px;
-  font-weight: bold;
-}
-
-.calendar-booked {
-  background-color: #BEBEBE;
-  width: 50px;
-  height: 50px;
-  border: 1px solid white;
-  padding: 17px;
-  font-weight: bold;
-}
-
-.calendar-header {
-  font-weight: bold;
-  text-align: center;
-  font-size: 18px;
-}
-
