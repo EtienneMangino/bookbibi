@@ -30,12 +30,10 @@ class FlatsController < ApplicationController
 
   def show
     @booking = Booking.new
-
   end
 
   def new
     @flat = Flat.new
-
   end
 
   def edit
@@ -43,9 +41,12 @@ class FlatsController < ApplicationController
 
   def create
     @flat = current_user.flats.new(flat_params)
-    @flat.save
-
-    redirect_to manage_all_flats_path
+    if @flat.save
+      flash[:notice] = "Your new flat in #{@flat.city} has been added successfully!"
+      redirect_to manage_all_flats_path
+    else
+      render :new
+    end
   end
 
   def update
@@ -60,7 +61,6 @@ class FlatsController < ApplicationController
 
   def manage_all
     @flats = current_user.flats.all
-
   end
 
 
