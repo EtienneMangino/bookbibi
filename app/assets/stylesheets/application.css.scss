@@ -13,6 +13,10 @@ body {
   padding-bottom: 15px;
 }
 
+.spacer {
+  margin-top: 15px;
+}
+
 .calendar-available {
   background-color: #2ecc71;
   width: 50px;
@@ -28,11 +32,12 @@ body {
   height: 50px;
   border: 1px solid white;
   padding: 17px;
-    font-weight: bold;
-  }
+  font-weight: bold;
+}
 
-  .calendar-header {
-    font-weight: bold;
-    text-align: center;
-    font-size: 18px;
-  }
+.calendar-header {
+  font-weight: bold;
+  text-align: center;
+  font-size: 18px;
+}
+

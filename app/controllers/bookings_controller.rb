@@ -1,5 +1,9 @@
 class BookingsController < ApplicationController
-  before_action :set_booking, only: [:show]
+  before_action :set_booking, only: [:show, :destroy]
+
+  def index
+    @bookings = current_user.bookings.all
+  end
 
   def create
     @flat = Flat.find(params[:flat_id])
@@ -14,6 +18,11 @@ class BookingsController < ApplicationController
 
   def show
     @flat = @booking.flat
+  end
+
+  def destroy
+    @booking.destroy
+    redirect_to bookings_path
   end
 
   private
