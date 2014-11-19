@@ -16,7 +16,7 @@ body {
 }
 
 .banner{
-  background-image: url('sunnyold.jpg');
+  background-image: image-url('sunnyold.jpg');
   background-size: cover;
   background-attachment: fixed;
   color: white;
@@ -87,4 +87,8 @@ h2 {
 
 .spacer {
   margin-top: 15px;
+}
+
+.dropdown-menu {
+  background-color: grey;
 }
