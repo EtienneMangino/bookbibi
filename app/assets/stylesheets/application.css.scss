@@ -6,11 +6,11 @@
 @import "calendar";
 
 body {
-  // padding-top: 55px;
+  padding-top: 45px;
 }
 
 #welcome {
-  color: #777777;
+  color: white;
   padding-top: 15px;
   padding-bottom: 15px;
 }
@@ -41,8 +41,10 @@ body {
 }
 
 #bibinav {
-  background: transparent;
+  // background: transparent;
   border-bottom: none;
+  background-color: grey;
+
 }
 
 #bibinav a {
