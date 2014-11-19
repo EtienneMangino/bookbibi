@@ -5,15 +5,24 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+
+  <link href='http://fonts.googleapis.com/css?family=Coustard:400,900' rel='stylesheet' type='text/css'>
 </head>
 <body>
 
 <%= render 'shared/navbar' %>
 
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
+  <div class="banner text-center">
 
-<%= yield %>
+      <h1 id="title">BOOKBIBI</h1>
+      <h2 id="baseline">Pour vous sentir comme chez bibi.</h2>
+
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+
+      <%= yield %>
+
+  </div>
 
 </body>
 </html>

@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation" id="bibinav">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -19,8 +19,6 @@
           <li> <%= link_to 'Sign out', destroy_user_session_path, method: 'delete' %></li>
         <% else %>
           <li> <%= link_to "Sign in", new_user_session_path %> </li>
-          <li> <%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %></li>
-          <li> <%= link_to "Sign up", new_user_registration_path %></li>
         <% end %>
       </ul>
 
