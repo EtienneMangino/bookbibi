@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   get 'availabilities/update'
+  resources :bookings, only: [:show,:index,:destroy]
 
   resources :flats do
     resources :bookings, only: [:create]
