@@ -21,6 +21,24 @@
         <%= @flat.user.first_name %>
         <%= @flat.user.last_name %>
       </p>
+      <%= month_calendar  header: {class: "calendar-header"},title: ->(start_date) { content_tag :span, "Availabilities for #{I18n.t("date.month_names")[start_date.month]} #{start_date.year}", class: "calendar-title" } do |date| %>
+        <% if @flat.availabilities.find_by(day: date).present? %>
+          <% if @flat.availabilities.find_by(day: date).booking.present? %>
+            <div class="calendar-booked">
+            <%= date.mday %>
+            </div>
+          <% else %>
+            <div class="calendar-available">
+            <%= date.mday %>
+            </div>
+          <% end %>
+        <% else %>
+          <div class="calendar-booked">
+          <%= date.mday %>
+          </div>
+        <% end %>
+      <% end %>
+
 
       <%= render 'bookings/form'%>
 

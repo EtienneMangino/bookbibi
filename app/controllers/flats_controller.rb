@@ -5,11 +5,12 @@ class FlatsController < ApplicationController
 
   def index
     @city = params[:city]
+    @city.strip!
     @start_date = params[:start_date]
     @end_date = params[:end_date]
 
     if @city != ""
-      flats_city = Flat.where(city: @city)
+      flats_city = Flat.where("lower(city) = ?", @city.downcase)
     else
       flats_city = Flat.all
     end
