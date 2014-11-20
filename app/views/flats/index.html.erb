@@ -18,10 +18,31 @@
           <% end %>
 
   </div>
+
+  <br>
+  <br>
+  <!-- GOOGLEMAP -->
+
+  <div id="map" style="width: 80%; height: 400px;" class="container text-center">
+  </div>
+
+  <% content_for(:js) do %>
+    <script type="text/javascript">
+      $(document).on('ready', function() {
+        handler = Gmaps.build('Google');
+        handler.buildMap({ internal: { id: 'map' } }, function(){
+          markers = handler.addMarkers(<%= raw @markers.to_json %>);
+          handler.bounds.extendWith(markers);
+          handler.fitMapToBounds();
+        });
+      })
+    </script>
+  <% end %>
+
 </div>
 
-
-
 <br>
+
+
 
 
