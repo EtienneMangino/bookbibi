@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
 
+  get 'profiles/show'
+
   get 'availabilities/update'
+
+  resources :profiles, only: [:show]
+
   resources :bookings, only: [:show,:index,:destroy]
 
   resources :flats do

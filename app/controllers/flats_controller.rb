@@ -27,10 +27,21 @@ class FlatsController < ApplicationController
       flat if available
     end
 
+    @markers = Gmaps4rails.build_markers(@flats) do |flat, marker|
+      marker.lat flat.latitude
+      marker.lng flat.longitude
+    end
+
   end
 
   def show
     @booking = Booking.new
+
+    @markers = Gmaps4rails.build_markers([@flat]) do |flat, marker|
+      marker.lat flat.latitude
+      marker.lng flat.longitude
+    end
+
   end
 
   def new
