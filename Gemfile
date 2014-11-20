@@ -61,5 +61,8 @@ gem 'aws-sdk'
 gem 'paperclip'
 gem "simple_calendar", "~> 1.1.0"
 
+
+gem "letter_opener", group: :development
+
 gem "gmaps4rails"
 gem "rails-assets-underscore"
