@@ -1,7 +1,8 @@
+
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome";
-
 @import "flats";
 @import "calendar";
 
@@ -10,55 +11,57 @@ body {
 }
 
 #welcome {
-  color: white;
+  color: #e67e22;
   padding-top: 15px;
-  padding-bottom: 15px;
 }
 
 .banner{
-  background-image: image-url('sunnyold.jpg');
+  background-image: image-url('Fond.jpg');
   background-size: cover;
   background-attachment: fixed;
   color: white;
-  padding-top: 100px;
+  padding-top: 50px;
   padding-bottom: 30px;
-  height: 850px;
+  height: 1000px;
+
 }
 
 #title {
-  font-size: 100px;
+  font-size: 10rem;
   font-family: 'Coustard', serif;
   font-weight: 900;
   color: #e67e22;
   text-shadow: 1px 1px 0.8px #292929;
+    @media screen and (max-width: 1280px)
+  {
+      font-size: 6rem;
+  }
 }
 
 #baseline {
   font-family: 'Coustard', serif;
-  color: white;
-  font-size: 30px;
+  color: #e67e22;
+  font-size: 3rem;
   text-shadow: 1px 1px 0.8px #292929;
+  @media screen and (max-width: 1280px)
+  {
+      font-size: 2rem;
+  }
 }
 
 #bibinav {
   // background: transparent;
   border-bottom: none;
-  background-color: grey;
+  background-color: #D3D3D3;
 
 }
 
 #bibinav a {
-  color: white;
-}
-
-#bibinav a:hover {
   color: #e67e22;
 }
 
-
-h2 {
-  color: white;
-  font-size: 20px;
+#bibinav a:hover {
+  color: black;
 }
 
 #fb-btn {
@@ -72,7 +75,12 @@ h2 {
 }
 
 #signup a {
-  color: white;
+  color: #e67e22;
+}
+
+h1 {
+  color: #e67e22;
+  font-size: 4rem;
 }
 
 .btn-default {
@@ -94,4 +102,32 @@ h2 {
 }
 input {
   color: black;
+}
+
+.index_flats {
+  height: 500px;
+  border: 1px solid black;
+  background-color: #ECECEC;
+  border-radius:5px;
+
+}
+
+.index_flats p {
+  font-size: 2rem;
+}
+
+.index_flats h3 {
+  font-size: 3rem;
+}
+
+#btnbtn {
+  width:150px;
+  height: 50px;
+  font-size: 2rem;
+}
+
+.form-inline{
+  color: #e67e22;
+  font-size: 2rem;
+  text-shadow: 1px 1px 0.8px #292929;
 }
