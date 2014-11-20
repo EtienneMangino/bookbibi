@@ -17,6 +17,9 @@ class Flat < ActiveRecord::Base
   before_validation :strip_whitespace
   after_save :set_availabilities
 
+  geocoded_by :address
+  after_validation :geocode, if: :address_changed?
+
   private
   def set_availabilities
     (0..90).each do |i|
