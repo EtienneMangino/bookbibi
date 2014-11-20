@@ -1,13 +1,12 @@
 <h1 class="text-center">Your booking</h1>
-
+<h2 class="text-center"><%= @flat.title %></h2>
 <div class="container">
   <div class="row">
-    <div class="col-xs-offset-1 col-xs-10 col-sm-offset-3 col-sm-6 col-lg-offset-4 col-lg-4">
-
-      <h2 class="text-center"><%= @flat.title %></h2>
-
+    <div class="col-sm-12 col-md-6 text-left">
       <%= image_tag @flat.picture.url(:medium) %>
-
+    </div>
+    <div class="spacer"></div>
+    <div class="col-sm-12 col-md-6 text-center">
       <p>
         <strong>Address:</strong>
         <%= @flat.address %>
@@ -33,9 +32,7 @@
         <strong>End Date:</strong>
         <%= @booking.end_date %>
       </p>
-      <div class="text-center">
       <%= link_to 'Back Home', root_path, class: "btn btn-primary" %>
-      </div>
     </div>
   </div>
 </div>
