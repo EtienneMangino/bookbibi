@@ -13,18 +13,22 @@
   <div class="nav-transparent">
   <%= render 'shared/navbar' %>
   </div>
-  <div class="banner text-center">
+<!--   <div class="banner text-center"> -->
+      <%= video_tag "HOME.mp4",  preload: "auto", autoplay: "true", loop: "loop", muted: "muted", id: "video_background" %>
 
-      <h1 id="title">BOOKBIBI</h1>
-      <h2 id="baseline">Pour vous sentir comme chez bibi.</h2>
+      <div class="text-center">
+        <br>
+        <br>
+        <h1 id="title">BOOKBIBI</h1>
+        <h2 id="baseline">Pour vous sentir comme chez bibi.</h2>
 
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
+        <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
 
-      <%= yield %>
+        <%= yield %>
 
 
-</div>
+      </div>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 </body>
 </html>
