@@ -25,22 +25,24 @@
           <p><strong>Address:</strong> <%= flat.address %></p>
           <p><strong>City:</strong> <%= flat.city %></p>
           <p><strong>Description:</strong> <%= flat.description %></p>
-          <p><strong>Booked:</strong></p>
-          <ul>
-            <% flat.bookings.each do |booking| %>
-              <li>From <%= booking.start_date %> to <%= booking.end_date %> by <%= booking.user.first_name %> <%= booking.user.last_name %></li>
-            <% end %>
-          </ul>
+
+          <% if (flat.bookings.count>0) %>
+            <p><strong>Booked:</strong></p>
+            <ul>
+              <% flat.bookings.each do |booking| %>
+                <li>From <%= booking.start_date %> to <%= booking.end_date %> by <%= booking.user.first_name %> <%= booking.user.last_name %></li>
+              <% end %>
+            </ul>
+          <% end %>
         </div>
       </div>
-    </div>
-
     <% end %>
-    <div class="row">
-      <div class="col-xs-12 text-center">
-        <%= link_to 'Add a new flat', (new_flat_path), class: 'btn btn-default' %>
-      </div>
+  </div>
+
+
+  <div class="row">
+    <div class="col-xs-12 text-center">
+      <%= link_to 'Add a new flat', (new_flat_path), class: 'btn btn-default' %>
     </div>
   </div>
 </div>
-

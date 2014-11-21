@@ -2,25 +2,24 @@
 
 <%= form_tag flats_path, method: "get" do %>
 <div class="form-inline" role="form">
-    <div class="form-group">
-      <%= label_tag(:city, "City") %>
-      <br>
-      <%= text_field_tag(:city, nil, class: 'form-control')  %>
-    </div>
-    <div class="form-group">
-      <%= label_tag(:start_date, "Start date") %>
-      <br>
-      <%= date_field_tag(:start_date, nil, class: 'form-control') %>
-    </div>
-    <div class="form-group">
-      <%= label_tag(:end_date, "End date") %>
-      <br>
-      <%= date_field_tag(:end_date, nil, class: 'form-control') %>
-    </div>
+  <div class="form-group">
+    <%= label_tag(:city, "City") %>
     <br>
+    <%= text_field_tag(:city, nil, class: 'form-control')  %>
+  </div>
+  <div class="form-group">
+    <%= label_tag(:start_date, "Start date") %>
     <br>
-
-    <%= submit_tag("Find a flat",  class: 'form-control btn btn-primary', id: 'btnbtn') %>
+    <%= date_field_tag(:start_date, nil, class: 'form-control') %>
+  </div>
+  <div class="form-group">
+    <%= label_tag(:end_date, "End date") %>
+    <br>
+    <%= date_field_tag(:end_date, nil, class: 'form-control') %>
+  </div>
+  <br>
+  <br>
+  <%= submit_tag("Find a flat",  class: 'form-control btn btn-primary', id: 'btnbtn') %>
 
   </div>
 </div>

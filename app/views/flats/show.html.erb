@@ -1,12 +1,14 @@
-<h1 class="text-center"><%= @flat.title %></h1>
+<h1 class="text-center">Book this Flat <br> <%= @flat.title %></h1>
 <br>
 <div class="container text-center">
   <div class="row">
-    <div class="col-sm-12 col-md-6">
-      <%= image_tag @flat.picture.url(:large) %>
+    <div class="col-sm-12 col-md-5">
+      <div class="index_flats">
+        <%= image_tag @flat.picture.url(:large) %>
+      </div>
     </div>
     <div class="spacer"></div>
-    <div class="col-sm-12 col-md-6">
+    <div class="col-sm-12 col-md-7">
       <p>
         <strong>Address:</strong>
         <%= @flat.address %>
@@ -21,6 +23,8 @@
         <%= @flat.user.first_name %>
         <%= @flat.user.last_name %>
       </p>
+
+
       <div class="spacer"></div>
 
      <%= month_calendar  header: {class: "calendar-header"},title: ->(start_date) { content_tag :span, "Availabilities for #{I18n.t("date.month_names")[start_date.month]} #{start_date.year}", class: "calendar-title" } do |date| %>
@@ -40,18 +44,23 @@
           </div>
         <% end %>
       <% end %>
+
+      <br>
+
+      <%= render 'bookings/form'%>
     </div>
 
-    <div class="col-xs-offset-2 col-xs-8 col-sm-offset-4 col-sm-4">
-      <%= render 'bookings/form'%>
 
 
-  <br>
-  <br>
-  <!-- GOOGLEMAP -->
+    <br>
+    <br>
+    <!-- GOOGLEMAP -->
 
-  <div id="map" style="width: 80%; height: 400px;" class="container text-center">
-  </div>
+    <div id="map" style="width: 80%; height: 400px;" class="container text-center">
+    </div>
+
+    <br>
+    <br>
 
   <% content_for(:js) do %>
     <script type="text/javascript">
@@ -67,7 +76,6 @@
     </script>
   <% end %>
 
-    </div>
 
   </div>
 </div>

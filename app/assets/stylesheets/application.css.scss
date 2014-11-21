@@ -7,11 +7,13 @@
 $bg-color: #2E2E2E;
 $font-clr: #d35400;
 $font-title: 'Coustard', serif;
+$font-text: 'Open Sans', sans-serif;
 
 
 body {
   padding-top: 35px;
   background: image-url('brickwall.png');
+  font-family: $font-text;
 }
 
 #welcome {
@@ -20,7 +22,7 @@ body {
 }
 
 .banner{
-  background-image: image-url('Fond.jpg');
+  background-image: image-url('home.png');
   background-size: cover;
   background-attachment: fixed;
   color: white;
@@ -108,16 +110,29 @@ h2 {
 .dropdown-menu {
   background-color: $bg-color;
 }
+
+.dropdown-menu li a:hover {
+  background-color: $font-clr;
+}
+
 input {
   color: black;
 }
 
 .index_flats {
-  height: 500px;
+  height: 450px;
   background-color: #ECECEC;
   border-radius:5px;
-  padding-top: 5px;
+  padding: 20px;
   margin: 5px;
+  @media screen and (max-width: 992px)
+  {
+    height: 400px;
+  }
+  @media screen and (max-width: 768px)
+  {
+    height: 300px;
+  }
 }
 
 .index_flats p {
@@ -134,7 +149,6 @@ input {
   height:100%;
 }
 
-
 #btnbtn {
   width:150px;
   height: 50px;
@@ -143,10 +157,15 @@ input {
   border: none;
 }
 
-.form-inline{
+.form-inline {
   color: $font-clr;
   font-size: 2rem;
   text-shadow: 1px 1px 0.8px #292929;
+}
+
+#bookform {
+  font-size: 1.5rem;
+  text-shadow: none;
 }
 
 img {
