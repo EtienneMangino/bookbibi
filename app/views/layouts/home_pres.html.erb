@@ -12,13 +12,12 @@
 <body>
   <div class="nav-transparent">
   <%= render 'shared/navbar' %>
-  </div>
+  </div >
+  <div class='banner'>
 <!--   <div class="banner text-center"> -->
       <%= video_tag "HOME.mp4",  preload: "auto", autoplay: "true", loop: "loop", id: "video_background" %>
 
       <div class="text-center">
-        <br>
-        <br>
         <h1 id="title">BOOKBIBI</h1>
         <h2 id="baseline">Pour vous sentir comme chez bibi.</h2>
 
@@ -29,6 +28,7 @@
 
 
       </div>
+</div>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 </body>
 </html>
