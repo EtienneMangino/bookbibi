@@ -1,23 +1,27 @@
 .calendar-available {
   background-color: #2ecc71;
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   border: 1px solid white;
-  padding: 17px;
+  padding: 13px;
   font-weight: bold;
 }
 
 .calendar-booked {
   background-color: #BEBEBE;
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   border: 1px solid white;
-  padding: 17px;
+  padding: 13px;
   font-weight: bold;
 }
 
 .calendar-header {
   font-weight: bold;
-  text-align: center;
   font-size: 18px;
+}
+
+table {
+  margin: auto;
+  text-align: center;
 }

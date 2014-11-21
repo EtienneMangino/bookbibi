@@ -1,70 +1,74 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome";
-
 @import "flats";
 @import "calendar";
 
+$bg-color: #2E2E2E;
+$font-clr: #d35400;
+$font-title: 'Coustard', serif;
+
 body {
-  padding-top: 45px;
+  padding-top: 35px;
+  background: image-url('brickwall.png');
 }
 
 #welcome {
-  color: white;
+  color: $font-clr;
   padding-top: 15px;
-  padding-bottom: 15px;
 }
 
 .banner{
-  background-image: image-url('sunnyold.jpg');
+  background-image: image-url('Fond.jpg');
   background-size: cover;
   background-attachment: fixed;
   color: white;
-  padding-top: 100px;
+  padding-top: 50px;
   padding-bottom: 30px;
-  height: 850px;
+  height: 1000px;
+
 }
 
 #title {
-  font-size: 100px;
-  font-family: 'Coustard', serif;
+  font-size: 12rem;
+  font-family: $font-title;
   font-weight: 900;
-  color: #e67e22;
+  color: $font-clr;
   text-shadow: 1px 1px 0.8px #292929;
+    @media screen and (max-width: 768px)
+  {
+      font-size: 6rem;
+  }
 }
 
 #baseline {
   font-family: 'Coustard', serif;
-  color: white;
-  font-size: 30px;
+  color: $font-clr;
+  font-size: 3rem;
   text-shadow: 1px 1px 0.8px #292929;
+  @media screen and (max-width: 768px)
+  {
+      font-size: 2rem;
+  }
 }
 
 #bibinav {
   // background: transparent;
   border-bottom: none;
-  background-color: grey;
-
+  background-color: $bg-color;
 }
 
 #bibinav a {
-  color: white;
+  color: $font-clr;
 }
 
 #bibinav a:hover {
-  color: #e67e22;
-}
-
-
-h2 {
   color: white;
-  font-size: 20px;
 }
 
 #fb-btn {
   padding-top: 60px;
 }
-
 
 #signup {
   margin-top: 40px;
@@ -72,12 +76,23 @@ h2 {
 }
 
 #signup a {
-  color: white;
+  color: $font-clr;
+}
+
+h1 {
+  font-family: $font-title;
+  color: $font-clr;
+  font-size: 4rem;
+}
+
+h2 {
+  font-family: $font-title;
+  color: $font-clr;
 }
 
 .btn-default {
   color: white;
-  background-color: #e67e22;
+  background-color: $font-clr;
   border-color: #cccccc;
 }
 
@@ -90,8 +105,61 @@ h2 {
 }
 
 .dropdown-menu {
-  background-color: grey;
+  background-color: $bg-color;
 }
 input {
   color: black;
+}
+
+.index_flats {
+  height: 500px;
+  background-color: #ECECEC;
+  border-radius:5px;
+  padding-top: 5px;
+  margin: 5px;
+}
+
+.index_flats p {
+  font-size: 2rem;
+}
+
+.index_flats h3 a {
+  font-size: 2.5rem;
+  color: $bg-color;
+}
+
+#btnbtn {
+  width:150px;
+  height: 50px;
+  font-size: 2rem;
+  background-color: $font-clr;
+  border: none;
+}
+
+.form-inline{
+  color: $font-clr;
+  font-size: 2rem;
+  text-shadow: 1px 1px 0.8px #292929;
+}
+
+img {
+  @media screen and (max-width: 768px)
+  {
+      max-width: 100%;
+  }
+}
+
+footer {
+  margin-top: 30px;
+  padding-top: 20px;
+  background-color: $bg-color;
+  color: $font-clr;
+}
+
+footer a {
+  color: $font-clr;
+}
+
+footer a:hover {
+  color: white
 }

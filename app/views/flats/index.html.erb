@@ -2,21 +2,20 @@
 
 <div class="container text-center">
   <div class="row">
+  <% @flats.each do |flat| %>
+        <div class="col-xs-12 col-sm-6 col-md-6">
+          <div class= "index_flats">
+            <h3><%= link_to flat.title, flat %></h3>
+            <p><%= flat.city %></p>
+            <div >
+              <% if flat.picture.exists? %>
+                <%= link_to image_tag(flat.picture.url(:large)), flat %>
+              <% end %>
+            </div>
+          </div>
+        </div>
 
-        <% @flats.each do |flat| %>
-
-              <div class="col-xs-12 col-sm-6 col-md-3">
-                  <h3><%= link_to flat.title, flat %></h3>
-                  <p><%= flat.city %></p>
-                  <div >
-                    <% if flat.picture.exists? %>
-                      <%= link_to image_tag(flat.picture.url(:medium)), flat %>
-                    <% end %>
-                  </div>
-              </div>
-
-          <% end %>
-
+    <% end %>
   </div>
 
   <br>
